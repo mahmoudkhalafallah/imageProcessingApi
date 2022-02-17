@@ -1,0 +1,49 @@
+{
+  "name": "image-processing-api",
+  "version": "1.0.0",
+  "description": "a simple placeholder API allows you to place images into your frontend with the size set via URL parameters and a library to serve properly scaled versions of your images to the front end to reduce page load size.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "test": "npm run build && npm run jasmine",
+    "jasmine": "jasmine",
+    "prettier": "prettier -c .prettierrc.json 'src/**/*.ts' --write",
+    "lint": "prettier && eslint --fix 'src/**/*.ts'",
+    "build": "npm run lint && tsc -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmoudkhalafallah/imageProcessingApi.git"
+  },
+  "keywords": [
+    "image_processing",
+    "api"
+  ],
+  "author": "Mahmoud Khalafallah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahmoudkhalafallah/imageProcessingApi/issues"
+  },
+  "homepage": "https://github.com/mahmoudkhalafallah/imageProcessingApi#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^3.10.3",
+    "@types/morgan": "^1.9.3",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
+}
