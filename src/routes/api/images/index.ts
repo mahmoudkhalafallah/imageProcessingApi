@@ -45,8 +45,22 @@ router.get('/', async (req, res) => {
     return res.end('File not found! Please try a different filename');
   }
 
-  const width = validateDimension(requestedWidth);
-  const height = validateDimension(requestedHeight);
+  let width: number;
+  try {
+    width = validateDimension(requestedWidth);
+  } catch (error) {
+    res.status(400);
+    return res.send('Please provide a valid width numerical value');
+  }
+
+  let height: number;
+  try {
+    height = validateDimension(requestedHeight);
+  } catch (error) {
+    res.status(400);
+    return res.send('Please provide a valid height numerical value');
+  }
+
   const fileExtension = getFileExt(filename);
   const thumbFilename = getThumbFilename(
     getFileNameExcludingExt(filename),

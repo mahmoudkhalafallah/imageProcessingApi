@@ -1,16 +1,18 @@
 import path from 'path';
 import { ParsedQs } from 'qs';
-import { defaultDimentionValue, resizedImageDirPath } from '../constants';
+import { resizedImageDirPath } from '../constants';
 
 type QueryValue = ParsedQs | ParsedQs[] | string[] | string | undefined;
 
 /**
  * @param  {QueryValue} dimension
- * @returns defaultDimentionValue
  */
 export function validateDimension(dimension: QueryValue) {
   const parsed = parseInt(dimension as string);
-  return !Number.isNaN(parsed) ? parsed : defaultDimentionValue;
+  if (!Number.isNaN(parsed)) {
+    return parsed;
+  }
+  throw Error('a valid dimension is needed');
 }
 
 /**
