@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { promises as fsPromises } from 'fs';
 import {
   validateDimension,
@@ -12,7 +12,7 @@ import {
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (req: Request, res: Response) => {
   const {
     filename: requestedFilename,
     width: requestedWidth,
@@ -24,13 +24,13 @@ router.get('/', async (req, res) => {
     return res.end('Please enter a filename!');
   }
 
-  let filename;
+  let filename: string | undefined;
   try {
     // get full file name if file is available
     const dir = await fsPromises.readdir(fullSizeImageDirPath);
     const filenameRegex = new RegExp(requestedFilename.toString() + '?.*');
 
-    filename = dir.find((file) => {
+    filename = dir.find((file: string): boolean => {
       return filenameRegex.test(file);
     });
   } catch (err) {

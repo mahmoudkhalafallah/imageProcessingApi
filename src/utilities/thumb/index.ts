@@ -36,7 +36,7 @@ export const generateThumb: (
     {
       recursive: true,
     },
-    (err) => {
+    (err: NodeJS.ErrnoException | null) => {
       if (err) {
         throw 'Error creating the thumb folder.';
       }

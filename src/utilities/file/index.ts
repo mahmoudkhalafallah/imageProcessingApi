@@ -7,7 +7,7 @@ type QueryValue = ParsedQs | ParsedQs[] | string[] | string | undefined;
 /**
  * @param  {QueryValue} dimension
  */
-export function validateDimension(dimension: QueryValue) {
+export function validateDimension(dimension: QueryValue): number {
   const parsed = parseInt(dimension as string);
   if (!Number.isNaN(parsed)) {
     return parsed;

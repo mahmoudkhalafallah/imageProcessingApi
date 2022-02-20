@@ -9,7 +9,7 @@ describe('GET /api/images endpoint', () => {
       .get('/api/images?filename=fjord&width=200&height=200')
       .expect('Content-Type', /image\/jpg/)
       .expect(200)
-      .end(function (err) {
+      .end(function (err: Error) {
         if (err) throw err;
       });
   });
