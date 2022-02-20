@@ -8,8 +8,9 @@
     "test": "npm run build && npm run jasmine",
     "jasmine": "jasmine",
     "prettier": "prettier -c .prettierrc.json 'src/**/*.ts' --write",
-    "lint": "prettier && eslint --fix 'src/**/*.ts'",
-    "build": "npm run lint && tsc -b"
+    "eslint": "eslint --fix 'src/**/*.ts'",
+    "lint": "npm run prettier && npm run eslint",
+    "build": "tsc -b"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "@types/express": "^4.17.13",
     "@types/jasmine": "^3.10.3",
     "@types/morgan": "^1.9.3",
+    "@types/sharp": "^0.29.5",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
@@ -44,6 +46,8 @@
   },
   "dependencies": {
     "express": "^4.17.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "qs": "^6.10.3",
+    "sharp": "^0.30.1"
   }
 }
