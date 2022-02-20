@@ -15,6 +15,8 @@
 
 `npm start`
 
+**Visit** http://localhost:3000/api/images?filename=fjord&width=300&height=300
+
 ----------
 ----------
 # Development
